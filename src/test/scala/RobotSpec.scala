@@ -16,4 +16,11 @@ class ControlPanelSpec extends AnyFlatSpec with should.Matchers {
   it should "return new object Robot with parameters corresponding to the commands skipping non-existing commands" in {
     executeCommands(Robot(7, 3, 0), "RAALALALWA") shouldBe Robot(8, 3, 180)
   }
+
+  behavior of "A ControlPanel.runListOfCommands "
+
+  it should "return new object Robot with parameters corresponding to the number of commands " in {
+    runListOfCommands(Robot(7, 3, 0), List("RAA","LAL")) shouldBe Robot(9, 4, -90)
+  }
+
 }

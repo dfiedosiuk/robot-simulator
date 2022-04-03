@@ -20,4 +20,11 @@ object ControlPanel extends App {
       }}")
     nextRobot
   }
+
+  def runListOfCommands(startRobot: Robot, lcmd: List[String])={
+    lcmd.foldLeft(startRobot){(robot,cmd) =>
+      executeCommands(robot,cmd)
+    }
+  }
+
 }
